@@ -33,7 +33,7 @@ class TweetsController < ApplicationController
      if @tweet.user_id == session[:user_id]
        erb :'/tweets/show_tweet'
      #elsif logged_in && @tweet.user_id != current_user.id #if loohed in but doesn't owen tweet go to index
-       redirect to "/tweets"
+       #redirect to "/tweets"
      else
        redirect to "/login"
      end
