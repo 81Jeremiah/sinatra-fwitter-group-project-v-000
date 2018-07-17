@@ -1,12 +1,11 @@
 <h1>Welcome, <%= @user.username %></h1>
 <!-- list all tweets -->
-<%
 
 <% User.all.each do|user| %>
-   <h3><%= user.username %>'s Tweets</h3>
-     <% user.tweets.each do |tweet| %>
-      <%= tweet.content %><br>
-    <% end %>
+  <h3><a href="users/<%= user.slug"><%= user.username %>'s</a> Tweets</h3> <!-- link to user if belongs to you -->
+    <% user.tweets.each do |tweet| %>
+    <%= tweet.content %><br>
+  <% end %>
 <% end %>
 <br></br>
 <b><a href="/tweets/new">Create a new tweet</a><br></br></b>
