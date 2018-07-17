@@ -42,7 +42,7 @@ class UsersController < ApplicationController
    erb :'users/show'
  end
 
- get '/logout' do
+ get '/logout' do # end session
    if !logged_in?
      redirect to "/"
    else
