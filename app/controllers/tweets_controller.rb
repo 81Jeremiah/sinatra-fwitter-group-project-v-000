@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
 
-  get '/tweets' do
+  get '/tweets' do  #render tweet index page if logged in
     if logged_in?
       @user = current_user
       erb :'tweets/tweets'
