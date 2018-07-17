@@ -1,7 +1,16 @@
-<h1> <%= @user.username %> Page of Tweets</h1>
-<h3>Below is everything they thought was necessary for the world to see</h3>
-<% @user.tweets.each do |tweet| %>
-<ul>
-  <li><%= tweet.content %></li>
-</ul>
+<% if @user ==  current_user %>
+  <h1>Word to your mother, <%= @user.username %></h1>
+  <h3>If you are having any second thoughts on what you shared, click on the tweet and change it</h3>
+    <% @user.tweets.each do |tweet| %>
+      <a href="/tweets/<%= tweet.id %>/edit"><%= tweet.content %></a><br>
+    <% end %>
+<% else %>
+  <h1> <%= @user.username %> Page of Tweets</h1>
+  <h3>Below is everything they thought was necessary for the world to see</h3>
+    <% @user.tweets.each do |tweet| %>
+  <ul>
+    <li><%= tweet.content %></li>
+  </ul>
+  <% end %>
 <% end %>
+<a href="/tweets"><button type="button">Return to Tweets</button></a>
