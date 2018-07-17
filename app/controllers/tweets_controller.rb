@@ -39,7 +39,7 @@ class TweetsController < ApplicationController
      end
    end
 
-  delete '/tweets/:id/delete' do
+  delete '/tweets/:id/delete' do #button only on tweet page, can't access unless logged in
     tweet = Tweet.find_by(id: params[:id])
     tweet.delete
     redirect to "/tweets"
