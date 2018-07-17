@@ -3,6 +3,7 @@ class TweetsController < ApplicationController
   get '/tweets' do
     if logged_in?
       @user = current_user
+      binding.pry
       erb :'tweets/tweets'
     else
       redirect to "/login"
