@@ -54,11 +54,11 @@ class TweetsController < ApplicationController
     end
   end
 
-  patch '/tweets/:id' do
+  patch '/tweets/:id' do 
 
     tweet = Tweet.find_by(id: params[:id])
 
-    if !params[:content].empty?
+    if !params[:content].empty? #if the tweet is empty it deosn't allow the update
       tweet.update(content: params[:content])
       redirect to "/tweets/#{tweet.id}"
     else
