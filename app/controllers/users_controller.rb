@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    @user = User.new(params) 
-    if @user.save && !params[:username].empty? && !params[:email].empty?
+    @user = User.new(params)
+    if @user.save && !params[:username].empty? && !params[:email].empty? #only allows new user if user name and email are entered
     session[:user_id] = @user.id
     redirect to "/tweets"
     else
