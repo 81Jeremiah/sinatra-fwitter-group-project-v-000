@@ -1,0 +1,7 @@
+<h1> <%= @user.username %> Page of Tweets</h1>
+<h3>Below is everything they thought was necessary for the world to see</h3>
+<% @user.tweets.each do |tweet| %>
+<ul>
+  <li><%= tweet.content %></li>
+</ul>
+<% end %>

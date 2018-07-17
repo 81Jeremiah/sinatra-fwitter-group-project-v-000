@@ -1,0 +1,17 @@
+body {
+  background-size: auto;
+  background-image: url("https://i.imgur.com/o4JJzvz.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+
+}
+
+.container {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #02d4fc;
+  margin-bottom: 500px;
+  margin-top: 100px;
+}
