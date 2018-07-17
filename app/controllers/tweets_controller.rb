@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  get '/tweets/new' do
+  get '/tweets/new' do #render new tweet form
     if logged_in?
       @user = current_user
       erb :'tweets/create_tweet'
