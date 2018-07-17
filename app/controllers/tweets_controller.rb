@@ -18,7 +18,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  post '/tweets/:userslug' do
+  post '/tweets/:userslug' do #post new tweet
     if !params[:tweet].empty?
       @user = User.find_by_slug(params[:userslug])
       @tweet = Tweet.create(content: params[:tweet], user_id: @user.id)
