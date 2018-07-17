@@ -30,6 +30,7 @@ class TweetsController < ApplicationController
 
    get '/tweets/:id' do  #if user owns tweet go to tweet page
      @tweet = Tweet.find_by(id: params[:id])
+     binding.pry
      if @tweet.user_id == session[:user_id]
        erb :'/tweets/show_tweet'
      elsif logged_in? && @tweet.user_id != current_user.id #if logged in but doesn't owen tweet go to index
