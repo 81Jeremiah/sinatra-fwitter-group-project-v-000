@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
      @tweet = Tweet.find_by(params[:id])
      if @tweet.user_id == session[:user_id]
        erb :'/tweets/show_tweet'
-     #elsif logged_in && @tweet.user_id != current_user.id #if loohed in but doesn't owen tweet go to index
+     #elsif logged_in? && @tweet.user_id != current_user.id #if loohed in but doesn't owen tweet go to index
        #redirect to "/tweets"
      else
        redirect to "/login"
