@@ -2,14 +2,14 @@ class UsersController < ApplicationController
 
   get '/signup' do
     if logged_in?
-      redirect to '/tweets'
+      redirect to '/tweets' #doesn't allow access if already logged in
     else
     erb :'users/create_user'
     end
   end
 
   post '/signup' do
-    @user = User.new(params) #username: params[:username], email: params[:email], password: params[:password]
+    @user = User.new(params) 
     if @user.save && !params[:username].empty? && !params[:email].empty?
     session[:user_id] = @user.id
     redirect to "/tweets"
